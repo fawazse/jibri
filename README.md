@@ -2,6 +2,9 @@
 
 JItsi BRoadcasting Infrastructure
 
+# command to build
+mvn -U clean compile package -DskipTests -Dassembly.skipAssembly=false
+
 # What is Jibri
 
 Jibri provides services for recording or streaming a Jitsi Meet conference.
