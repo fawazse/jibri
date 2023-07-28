@@ -188,14 +188,14 @@ class JibriSelenium(
         System.setProperty("webdriver.chrome.logfile", "/tmp/chromedriver.log")
         val chromeOptions = ChromeOptions()
         chromeOptions.addArguments(chromeOpts)
-        chromeOptions.setExperimentalOption("w3c", false)
+        // chromeOptions.setExperimentalOption("w3c", false)
         chromeOptions.addArguments(jibriSeleniumOptions.extraChromeCommandLineFlags)
         val chromeDriverService = ChromeDriverService.Builder().withEnvironment(
             mapOf("DISPLAY" to jibriSeleniumOptions.display)
         ).build()
         val logPrefs = LoggingPreferences()
         logPrefs.enable(LogType.DRIVER, Level.ALL)
-        chromeOptions.setCapability("LOGGING_PREFS", logPrefs)
+        // chromeOptions.setCapability("LOGGING_PREFS", logPrefs)
         chromeDriver = ChromeDriver(chromeDriverService, chromeOptions)
         chromeDriver.manage().timeouts().pageLoadTimeout(java.time.Duration.ofSeconds(60))
 
