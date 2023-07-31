@@ -99,8 +99,8 @@ class ProcessWrapper(
         // because we want them to read everything available from the
         // process' inputstream. Once it's done, they'll read
         // the EOF and close things up correctly
-        val cmdArr = arrayOf<String>("kill -s SIGINT ${process.pidValue}")
-        runtime.exec(cmdArr, null)
+        val cmdArr = arrayOf<String>("kill", "-s", "SIGINT", "${process.pidValue}")
+        runtime.exec(cmdArr)
     }
 
     /**
